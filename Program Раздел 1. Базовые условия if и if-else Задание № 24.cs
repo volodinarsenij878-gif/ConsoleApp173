@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program24
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Угол A (градусы): ");
+            if (!double.TryParse(Console.ReadLine(), out double a)) { Console.WriteLine("Ошибка."); return; }
+            Console.Write("Угол B (градусы): ");
+            if (!double.TryParse(Console.ReadLine(), out double b)) { Console.WriteLine("Ошибка."); return; }
+
+            if (a <= 0 || b <= 0)
+            {
+                Console.WriteLine("Углы должны быть положительными.");
+                return;
+            }
+
+            double sum = a + b;
+            if (sum < 180)
+                Console.WriteLine("Такой треугольник существует");
+            else
+                Console.WriteLine("Такой треугольник не существует");
+        }
+    }
+}
